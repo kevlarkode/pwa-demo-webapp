@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #eee;
+  font-family: sans-serif;
+  font-size: 1.125rem;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+#install {
+  border: 0.25em solid var(--link-color);
+  font-size: 1.5rem;
+  border: 0.25rem solid white;
+  box-shadow: 1px 1px 10px 5px hsla(0, 0%, 0%, 0.125);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  transition: 0.3s;
+  background-color: rebeccapurple;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+  text-decoration: none;
+  font-family: Calibri, sans-serif;
+  transition: 0.3s ease-in;
+}
+
+#install:active {
+  box-shadow: inset 1px 1px 10px 5px hsla(0, 0%, 0%, 0.25),
+   1px 1px 10px 5px hsla(0, 0%, 0%, 0.125);
+}
+
+#install svg {
+  width: 2em;
+}
+
+#install span {
+  font-size: 1rem;
+  padding-top: 0.125rem;
+}
