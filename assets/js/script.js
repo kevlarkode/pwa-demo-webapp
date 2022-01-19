@@ -10,6 +10,7 @@ window.addEventListener('beforeinstallprompt', e => {
     } else {
         const btn = document.querySelector('#install')
         btn.hidden = false;
+        btn.style.display = "flex";
         btn.onclick = _ => e.prompt();
         return e.preventDefault();
     }

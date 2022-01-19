@@ -1,6 +1,6 @@
 {
-    "short_name": "pwa-demo-webapp",
-    "name": "pwa-demo-webapp",
+    "short_name": "Demo PWA",
+    "name": "Demo PWA",
     "icons": [
         {
             "src": "/assets/img/logo.png",
