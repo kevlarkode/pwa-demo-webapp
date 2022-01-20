@@ -16,6 +16,10 @@ main {
   padding: 0 1rem;
 }
 
+.install-btn-container {
+  display: none;
+}
+
 #install {
   border: 0.25em solid var(--link-color);
   font-size: 1.5rem;
@@ -26,7 +30,7 @@ main {
   transition: 0.3s;
   background-color: hsl(100, 50%, 40%);
   color: white;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -35,6 +39,8 @@ main {
   font-family: Calibri, sans-serif;
   transition: 0.3s ease-in;
   cursor: pointer;
+  max-width: 3rem;
+  max-height: 3rem;
 }
 
 #install:active {
