@@ -1,11 +1,10 @@
 
 // Install Button Javascipt
 
-let deferredPrompt;
 const installBtnContainer = document.querySelector(".install-btn-container");
 const installBtn = document.querySelector('#install');
 
-window.addEventListener('DOMContentLoaded', (event) => {    
+window.addEventListener('DOMContentLoaded', (event) => {
     window.matchMedia('(display-mode: standalone)').addEventListener('change', ({ matches }) => {
         if (matches) {
             installBtnContainer.style.display = "none";
@@ -15,23 +14,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-window.addEventListener('beforeinstallprompt', (e) => {
-    installBtnContainer.style.display = "block";
-    deferredPrompt = e;
-    return e.preventDefault;
-});
-
-installBtn.addEventListener('click', async () => {
-    if (deferredPrompt !== null) {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === 'accepted') {
-            deferredPrompt = null;
-        }
+window.addEventListener('beforeinstallprompt', e => {
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+        return e.preventDefault();
     } else {
-        alert('App is already installed!');
+        installBtnContainer.style.display = "block";
+        installBtn.onclick = async () => {
+            if (e !== null) {
+                e.prompt();
+                const { outcome } = await e.userChoice;
+                if (outcome === 'accepted') {
+                    e = null;
+                }
+            } else {
+                alert('App is already installed!');
+            }
+        }
+        return e.preventDefault();
     }
 });
+
 
 // Register service worker
 
