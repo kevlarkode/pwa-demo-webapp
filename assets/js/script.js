@@ -18,6 +18,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 window.addEventListener('beforeinstallprompt', (e) => {
     installBtnContainer.style.display = "block";
     deferredPrompt = e;
+    return e.preventDefault;
 });
 
 installBtn.addEventListener('click', async () => {
